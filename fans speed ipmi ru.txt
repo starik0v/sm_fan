@@ -1,0 +1,9 @@
+используем isc_ipmitool.exe
+
+Чтобы скинуть скорость номерных кулеров - D:\Arc\win64\isc_ipmitool.exe -H IP_IPMI -U LOGIN -P 'PASSWORD' raw 0x30 0x70 0x66 0x01 0x00 0x04 
+(за зону (их две - ЦП и переферия) отвечает 5-е число, за скорость - 6-е)
+
+Чтобы скинуть кулера обозначенные буквами - D:\Arc\win64\isc_ipmitool.exe -H IP_IPMI -U LOGIN -P 'PASSWORD' raw 0x30 0x70 0x66 0x01 0x01 0x04 
+(за скорость так же отвечает 6-е число, за зону(тут зона переферии) - 5-е)
+
+вернуть к стоку - D:\Arc\win64\isc_ipmitool.exe -H 192.168.10.212 -U LOGIN -P 'PASSWORD' raw 0x30 0x45 0x01 0x00
